@@ -1,0 +1,13 @@
+﻿<h1>
+    Vista SumaNumeros --> Controlador GET
+</h1>
+<h2>
+    La Suma de @ViewBag.Numero1 + @ViewBag.Numero2 = @ViewData["DATOSSUMA"]
+</h2>
+
+@{
+    for(var index = 0; index <  ViewBag.Numero2; index++)
+    {
+        @ViewData[index.ToString()];
+    }
+}
