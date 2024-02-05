@@ -1,0 +1,29 @@
+﻿@*
+    Comentarios
+*@
+
+@{
+    //Variables locales de pagina codigo C#
+    int valor = 14;
+    string texto = "Hoy es lunes";
+    valor += 1;
+    texto = texto.ToUpper();
+}
+
+<h2>Texto: @texto, Valor: @valor</h2>
+
+@if (valor >= 0)
+{
+    texto = "POSITIVO";
+    <h2>@texto</h2>
+}
+else
+{
+    texto = "NEGATIVO";
+    <h2>@texto</h2>
+}
+
+<h1 style="color:Blue">
+    Mi primera pagina con MVC Net Core !!
+</h1>
+
