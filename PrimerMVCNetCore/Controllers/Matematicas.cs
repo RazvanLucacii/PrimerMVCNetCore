@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrimerMVCNetCore.Models;
 
 namespace PrimerMVCNetCore.Controllers
 {
@@ -32,12 +33,35 @@ namespace PrimerMVCNetCore.Controllers
         [HttpPost]
         public IActionResult TablaMultiplicarSimple(int numero)
         {
-            List<int> numeros = new List<int>();
-            while ()
+            List<int> resultado = new List<int>();
+            for(int i = 1; i <= 10; i++)
             {
-                
+                int operacion = numero * i;
+                resultado.Add(operacion);
             }
-            return View(numeros);
+            return View(resultado);
+        }
+
+        [HttpGet]
+        public IActionResult TablaMultiplicarModel()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult TablaMultiplicarModel(int numero)
+        {
+            List<FilaTablaMultiplicar> resultados = new List<FilaTablaMultiplicar>();
+            for (int i = 1; i <= 10; i++)
+            {
+                string operacion = numero + " * " + i;
+                int result = numero * i;
+                FilaTablaMultiplicar fila = new FilaTablaMultiplicar();
+                fila.Resultado = result;
+                fila.Operacion = operacion;
+                resultados.Add(fila);
+            }
+            return View(resultados);
         }
     }
 }
